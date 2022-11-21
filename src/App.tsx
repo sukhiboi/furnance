@@ -12,8 +12,10 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50,
-    marginHorizontal: 10,
+    height: '100%',
+    paddingTop: 32,
+    paddingHorizontal: 14,
+    backgroundColor: '#000000',
   },
 });
 
