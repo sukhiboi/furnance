@@ -6,12 +6,12 @@ import AddExpense from '../../components/AddExpense/AddExpense';
 import useExpenses, {Expense} from '../../hooks/useExpenses';
 
 const HomePage = () => {
-  const {expenses, addExpense, totalExpenditure} = useExpenses();
+  const {expenses, addExpense, totalExpenditure, resetExpenses} = useExpenses();
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Header amountSpent={totalExpenditure} />
+        <Header amountSpent={totalExpenditure} resetExpenses={resetExpenses} />
       </View>
       <ScrollView style={styles.expenses}>
         {expenses.map((expense: Expense) => (

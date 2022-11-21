@@ -13,6 +13,7 @@ const useExpenses = (): {
   expenses: Expense[];
   addExpense: (expense: ExpenseMeta) => void;
   totalExpenditure: number;
+  resetExpenses: () => void;
 } => {
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const totalExpenditure = useMemo(() => {
@@ -29,6 +30,7 @@ const useExpenses = (): {
     totalExpenditure,
     expenses,
     addExpense,
+    resetExpenses: () => setExpenses([]),
   };
 };
 export default useExpenses;

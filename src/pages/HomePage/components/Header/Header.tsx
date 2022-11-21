@@ -1,15 +1,26 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Button, StyleSheet, Text, View} from 'react-native';
 
 export interface IHeader {
   amountSpent: number;
+  resetExpenses: () => void;
 }
 
-const Header = ({amountSpent}: IHeader) => {
+const Header = ({amountSpent, resetExpenses}: IHeader) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.subtitle}>Today you spent</Text>
-      <Text style={styles.title}>Rs. {amountSpent}</Text>
+      <View
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}>
+        <Text style={styles.subtitle}>Today you spent</Text>
+        <Button title={'Reset'} onPress={resetExpenses} />
+      </View>
+      <View>
+        <Text style={styles.title}>Rs. {amountSpent}</Text>
+      </View>
     </View>
   );
 };

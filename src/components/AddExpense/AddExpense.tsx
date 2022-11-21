@@ -46,7 +46,7 @@ const AddExpense = ({registerExpense}: IAddExpense) => {
         placeholder={placeholder}
         onChangeText={setText}
         defaultValue={text}
-        placeholderTextColor={error ? '#ff615d' : '#fff'}
+        placeholderTextColor={error ? '#ff615d' : '#333'}
         style={[styles.input]}
       />
       <Button title={'Add'} onPress={onPress} />
